@@ -54,7 +54,7 @@
                                     $colores = explode(',', $producto->colores);
                                 @endphp
                                 @foreach ($colores as $i => $color)
-                                    <option value="{{ $color }}">{{ $color }}</option>
+                                    <option value="{{ $color }}">{{ __($color) }}</option>
                                 @endforeach
                             </select>
                         </div>

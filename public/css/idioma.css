@@ -57,10 +57,12 @@
 
   .globe-icon {
     background-image: url("/img/world.svg");
+    background-size: 100%;
   }
 
   .chevron-icon {
-    background-image: url("/img/chevron-down.svg")
+    background-image: url("/img/chevron-down.svg");
+    background-size: 100%;
   }
 
 
