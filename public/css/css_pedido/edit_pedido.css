@@ -1,0 +1,121 @@
+
+/*Media query para resoluciones de 320 pixeles*/
+@media screen and (min-width: 320px) {
+    .edit-titulo-pedido {
+        font-size: 14px;
+    }
+
+    .edit-pedidos-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .edit_pedidos {
+        max-width: 300px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 15px 15px;
+        border-radius: 15px;
+    }
+
+    .edit_pedidos textarea {
+        width: 268px;
+
+    }
+
+    .estados_pedidos {
+        display: flex;
+        margin: 10px auto;
+    }
+
+    .pedido_direccion {
+        width: 268px;
+        height: 35px;
+        padding: 10px;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .save_pedido {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+}
+
+/*Media query para resoluciones de 1024 pixeles*/
+@media screen and (min-width: 1024px) {
+
+
+    .edit-titulo-pedido {
+        font-size: 16px;
+    }
+
+    .edit-pedidos-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .edit-titulo-pedido {
+        text-align: center;
+    }
+
+    .edit_pedidos {
+        max-width: 450px;
+        padding: 25px 25px;
+    }
+
+    .estados_pedidos {
+        display: flex;
+        margin: 10px auto;
+    }
+
+
+    .pedido_direccion {
+        width: 400px;
+        height: 35px;
+        padding: 10px;
+    }
+
+    .notas {
+        width: 400px;
+    }
+
+    #edit {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+
+    }
+
+    .save_pedido {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .save_pedido button {
+        background-color: #3d3d4a;
+        color: #fff;
+        width: 130px;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .edit_pedidos textarea {
+        width: 400px;
+
+    }
+}
+
+/*Media query para resoluciones de 1680 pixeles*/
+@media screen and (min-width: 1680px) {}

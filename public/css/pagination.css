@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+}
+
+.enlaces {
+    text-decoration: none;
+    color: #3d3d4a;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.pagination a, .pagination li{
+    background-color: #3d3d4a;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 15px 10px;
+    width: 115px;
+    text-align: center;
+    text-transform: uppercase;
+}

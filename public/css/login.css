@@ -1,0 +1,84 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.login-pag {
+    text-align: center;
+}
+
+.login {
+    max-width: 350px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 35px 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 3px rgb(0 0 0 / 20%);
+}
+.inputs-login label{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.inputs-login input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    outline: none;
+}
+
+.inputs-login input:focus {
+    border-color: #3d3d4a;
+}
+
+.logear{
+    display: flex;
+    justify-content: space-between;;
+}
+
+.log-button input {
+    background-color: #3d3d4a;
+    color: #fff;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.alerta{
+    list-style: none;
+}
+
+.registrar {
+    margin-top: 10px;
+}
+
+.registrar a {
+    text-decoration: none;
+    color: #3d3d4a;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.registrar span {
+    font-size: 11px;
+
+}
+.remember-container label{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    
+}
+.remember-container input{
+    margin-left: 0px; 
+    cursor: pointer;
+}
+
+.remember-container span{
+    margin-left: 5px; 
+    cursor: pointer;
+}

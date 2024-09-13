@@ -1,0 +1,147 @@
+.sortable thead th:not(.no-sort) {
+    cursor: pointer;
+}
+
+.sortable thead th:not(.no-sort)::after, .sortable thead th:not(.no-sort)::before {
+    transition: color 0.1s ease-in-out;
+    font-size: 1.2em;
+    color: transparent;
+
+}
+
+.sortable thead th:not(.no-sort)::after {
+    margin-left: 3px;
+    content: "▸";
+}
+
+.sortable thead th:not(.no-sort):hover::after {
+    color: inherit;
+}
+
+.sortable thead th:not(.no-sort)[aria-sort=descending]::after {
+    color: inherit;
+    content: "▾";
+}
+
+.sortable thead th:not(.no-sort)[aria-sort=ascending]::after {
+    color: inherit;
+    content: "▴";
+}
+
+.sortable thead th:not(.no-sort).indicator-left::after {
+    content: "";
+}
+
+.sortable thead th:not(.no-sort).indicator-left::before {
+    margin-right: 3px;
+    content: "▸";
+}
+
+.sortable thead th:not(.no-sort).indicator-left:hover::before {
+    color: inherit;
+}
+
+.sortable thead th:not(.no-sort).indicator-left[aria-sort=descending]::before {
+    color: inherit;
+    content: "▾";
+}
+
+.sortable thead th:not(.no-sort).indicator-left[aria-sort=ascending]::before {
+    color: inherit;
+    content: "▴";
+}
+
+.sortable asc th {
+    width: 100px;
+}
+
+.sortable tbody tr {
+    background-color: #fff;
+    color: #3d3d4a;
+}
+
+/*Media query para resoluciones de 1024 pixeles*/
+@media screen and (min-width: 1024px) {
+    .pedido-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pedido-titulo {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .sortable td,
+    .sortable th {
+        border: 1px solid #3d3d4a;
+        padding: 10px 10px;
+        font-size: 13PX;
+    }
+
+
+    .sortable th {
+        background-color: #3d3d4a;
+        color: #fff;
+    }
+
+    .boton2, .boton1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 25px;
+        font-size: 11px;
+    }
+
+}
+
+
+/*Media query para resoluciones de 1680 pixeles*/
+@media screen and (min-width: 1680px) {
+    .wrapper {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .pedido-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        max-width: 900px;
+        width: 100%;
+    }
+
+    .sortable td,
+    .sortable th {
+        border: 1px solid #3d3d4a;
+        padding: 10px 30px;
+        font-size: 14PX;
+    }
+
+    th {
+        background-color: #3d3d4a;
+        color: #fff;
+        padding: 10px 40px;
+    }
+
+    .pedido-titulo {
+        font-size: 18px;
+    }
+
+
+}

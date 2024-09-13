@@ -1,0 +1,192 @@
+
+/* Media query para resoluciones de 320 píxeles */
+@media screen and (min-width: 320px) {
+
+    .seccion1 {
+        display: block;
+    }
+
+    .home-layout-box-1 {
+        background-image: url("../img/black.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 250px;
+    }
+
+    /*.home-layout-box-2 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 250px;
+    }*/
+
+    .menu-imgs {
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        align-items: center;
+    }
+}
+
+.menu-imgs p {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-imgs button {
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 12px;
+    border: 2px solid #fff;
+    padding: 6px 20px;
+    box-shadow: 1px 1px rgba(155, 155, 155, 0.4);
+    transition-property: padding;
+    transition-property: linear;
+    font-weight: 600;
+
+}
+
+.categoria a {
+    text-decoration: none;
+
+}
+
+.categoria button:hover {
+    padding: 9px 31px;
+
+
+}
+
+.seccion2 {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.home-layout-box-3 {
+    background-image: url("../img/hombre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+}
+
+.home-layout-box-4 {
+    background-image: url("../img/hombre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+}
+
+.home-layout-box-5 {
+    background-image: url("../img/hombre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+}
+
+.home-layout-box-6 {
+    background-image: url("../img/hombre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+}
+
+
+@media screen and (min-width: 1680px) {
+    .seccion1 {
+        display: block;
+    }
+
+    .home-layout-box-1 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 400px;
+    }
+
+    .home-layout-box-2 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
+    }
+
+    .menu-imgs {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-imgs p {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-imgs button {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fff;
+        font-size: 15px;
+        border: 2px solid #fff;
+        padding: 8px 30px;
+        box-shadow: 1px 1px rgba(155, 155, 155, 0.4);
+        transition-property: padding;
+        transition-property: linear;
+        font-weight: 600;
+
+    }
+
+    .categoria {
+        margin-top: 250px;
+    }
+
+    .categoria a {
+        text-decoration: none;
+
+    }
+
+    .categoria button:hover {
+        padding: 9px 31px;
+
+
+    }
+
+    .seccion2 {
+        padding: 10px 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .home-layout-box-3 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
+    }
+
+    .home-layout-box-4 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
+    }
+
+    .home-layout-box-5 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
+    }
+
+    .home-layout-box-6 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
+    }
+
+}

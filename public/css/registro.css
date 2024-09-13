@@ -1,0 +1,77 @@
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nombre-pag {
+    text-align: center;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.registro {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 35px 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 3px rgb(0 0 0 / 20%);
+
+}
+
+.inputs-registro input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.inputs-registro input:focus {
+    border-color: #3d3d4a;
+    ;
+}
+
+.inputs-registro input :valid {
+    border-color: #4caf50;
+}
+
+.create-button input {
+    background-color: #3d3d4a;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #3d3d4a ;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 600;
+}
+.login-button a {
+    background-color: #fff;
+    color: #3d3d4a;
+    padding: 10px 20px;
+    border: 1px solid #3d3d4a ;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 600;
+}
+.login-button a, .create-button input{
+    padding:10px 30px;
+}
+
+/*input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid {
+    border-color: #f44336;
+}*/

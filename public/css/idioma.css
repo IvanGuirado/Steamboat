@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* Media query para resoluciones de 320 pixeles */
+@media screen and (min-width: 320px) {
+
+  section.language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+  }
+
+  section.language h2 {
+    color: lightgray;
+  }
+
+  section.language button {
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    outline: none;
+    background-color: white;
+  }
+
+  section.language ul {
+    list-style-type: none;
+  }
+
+  .language-picker {
+    --width: 170px;
+    --roundedness: 10px;
+    position: absolute;
+    top: 185px;
+    left: 0;
+  }
+
+  .language-picker .language-picker-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--roundedness);
+    padding: 5px 10px;
+    width: var(--width)
+  }
+
+  .language-picker .left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .language-picker figure {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .globe-icon {
+    background-image: url("/img/world.svg");
+  }
+
+  .chevron-icon {
+    background-image: url("/img/chevron-down.svg")
+  }
+
+
+  .language-picker p {
+    flex: 5;
+  }
+
+  section.language .dropdown-options {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: var(--roundedness);
+    width: var(--width);
+    padding: 5px;
+    color: #3d3d4a;
+    font-weight: 700;
+  }
+
+  section.language .dropdown-options.opened {
+    display: flex;
+  }
+
+  section.language .option {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    border-radius: var(--roundedness);
+    width: 100%;
+    padding: 8px 10px;
+  }
+
+  section.language .option:hover {
+    background-color: hsl(0, 0%, 93%);
+  }
+
+  section.language .option p {
+    flex: 1;
+  }
+
+  .current-language {
+    color: #3d3d4a;
+    font-weight: 700;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .language-picker {
+    top: 20px;
+    left: auto;
+  }
+
+
+
+
+
+
+}

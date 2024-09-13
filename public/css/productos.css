@@ -1,0 +1,113 @@
+/* Media query para resoluciones de 320 píxeles */
+@media screen and (max-width: 320px) {
+    .productos-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        column-gap: 10px;
+    }
+
+    .productos-container img {
+        width: 150px;
+    }
+
+    .datos-productos-container {
+        padding: 0 0 20px 0;
+    }
+
+    .datos-container>a {
+        display: block;
+        overflow: hidden;
+        min-height: 200px;
+    }
+
+    .producto {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .info-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons-edition {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+
+
+
+/* Media query para resoluciones de 1024 pixeles*/
+@media screen and (min-width: 1024px) {
+    .datos-container>a {
+        display: block;
+        overflow: hidden;
+        height: 300px;
+    }
+
+    .productos-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    .producto {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .buttons-edition {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+
+}
+
+
+/* Media query para resoluciones de 1366 pixeles*/
+@media screen and (min-width: 1366px) {
+
+
+    .datos-container>a {
+        display: block;
+        overflow: hidden;
+        height: 300px;
+    }
+
+    .productos-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    .producto {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .buttons-edition {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+}
