@@ -89,6 +89,7 @@ class ProductController extends Controller
                 $query = $query->orWhere("categoria", 'LIKE', '%' . trim($categorias[2]) . '%');
             }
         });
+        
         return view('productos.show', ['producto' => $producto, 'relacionados' => $relacion->take(4)->get()]);
     }
 

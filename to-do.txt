@@ -1,0 +1,20 @@
+El carrito con nuevo usuario dice debes iniciar sesion.
+
+
+testear casos de uso:
+-Editar perfil usuario.
+-Usuario nuevo llega y quiere comprar
+-Gestión de carrito
+-Añadir, quitar y hacer compra de producto.
+-Gestión de pedidos.
+
+
+Redimensionar imagen SEO opengraph
+
+Añadir productos.
+
+Responsive.
+
+Arreglar mensaje bienvenida email
+
+Cuando editas el perfil de usuario te dice el email already taken.

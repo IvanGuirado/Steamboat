@@ -22,9 +22,11 @@ class AutentificacionController extends Controller
         $apellidos = $request->input('Apellidos');
         $mail = $request->input('Mail');
         $contraseña = $request->input('Contrasena');
-        User::create(["name" => $nombre, "last_name" => $apellidos, "name" => $nombre, "password" => $contraseña, "email" => $mail]);
+        $user=User::create(["name" => $nombre, "last_name" => $apellidos, "name" => $nombre, "password" => $contraseña, "email" => $mail]);
         Mail::to($mail)->send(new BienvenidoEmail($nombre));
-        return "ok";
+        //Iniciamos sesion con el usuario
+        Auth::login($user);
+        return redirect("/");
     }
     
     public function login()

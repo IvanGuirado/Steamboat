@@ -100,16 +100,31 @@
                 <div class="container-social">
                     <span>{{ __('Compartir') }}</span>
                     <div class="container-buttons-social">
-                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="http://www.facebook.com/sharer.php?u=www.mipagina.com" target="_blank""><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com/intent/tweet?text=Steamboat&ure=www.mipagina.com&via=Steamboat"
-                            target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/?url=https://www.drdrop.co/" target="_blank" rel="noopener"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://api.whatsapp.com/send?text=www.mipagina.com" target="_blank"><i
-                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:?subject=Visita%20mi%20sitio%20web&body=Hola,%20te%20invito%20a%20visitar%20mi%20sitio%20web:%20http://steamboatbrand.com" 
+                        aria-label="Enviar correo">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer.php?u={{ url()->current() }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            aria-label="Compartir en Facebook">
+                             <i class="fa-brands fa-facebook"></i>
+                         </a>
+                        <a href="https://twitter.com/intent/tweet?text={{ $producto ? $producto->nombre : 'steamboat' }}&url={{ url()->current() }}&via=Steamboat" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            aria-label="Compartir en Twitter">
+                             <i class="fa-brands fa-square-x-twitter"></i>
+                         </a>
+                        </a>
+                        <a href="https://www.instagram.com/?url={{url()->current()}}" target="_blank" rel="noopener noreferrer" aria-label="Ir al perfil de Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text={{url()->current()}}" target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
+                    
                 </div>
             </div>
         </div>
