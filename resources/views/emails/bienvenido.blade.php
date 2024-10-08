@@ -20,7 +20,7 @@
 
     Saludos,
 
-    {{ $nombre_empresa }}
+    Steamboat
 
-    {{ $web }} 
+    www.steamboatbrand.com
 @endcomponent

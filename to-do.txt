@@ -1,4 +1,5 @@
-El carrito con nuevo usuario dice debes iniciar sesion.
+
+Poner vista de usuario en carrito controler linea 89
 
 
 testear casos de uso:
@@ -18,3 +19,11 @@ Responsive.
 Arreglar mensaje bienvenida email
 
 Cuando editas el perfil de usuario te dice el email already taken.
+
+Arreglar los productos en la descripcion aparece informacion de la fuente.
+
+Arreglar reseñas aparece información del detalle.
+
+Añadir mas fotos en un mismo producto.
+
+Añadir mas tipos de productos.

@@ -48,6 +48,7 @@ Route::get('/carrito',[CarritoController::class, 'index'])->name('carrito');
 Route::get('/carrito/list',[CarritoController::class, 'list'])->name('carrito.list');
 Route::get('/carrito/json',[CarritoController::class, 'listJson'])->name('carrito.json');
 Route::post('/carrito',[CarritoController::class, 'carritoCreate'])->name('carrito.create');
+Route::get('/carrito/verificarUsuario',[CarritoController::class, 'verificarUsuario'])->name('verificar.usuario');
 Route::post('/carrito/direccion',[CarritoController::class, 'direccionEnvio'])->name('carrito.direccion');
 Route::post('/carrito/pagar',[CarritoController::class, 'pagar'])->name('pagar');
 Route::post('/carrito/efectuarCompra',[CarritoController::class, 'efectuarCompra'])->name('efectuarCompra');

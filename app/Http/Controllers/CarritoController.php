@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\PedidoProducto;
 use App\Mail\ProductoEnviadoEmail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 
 class CarritoController extends Controller
@@ -28,7 +29,8 @@ class CarritoController extends Controller
         $cantidad = $request->input("cantidad");
         $user = auth()->user();
         if (!$user) {
-            return response()->json(['Mensaje' => 'Debes iniciar sesión'], 401);
+            $user = User::create(["name" => "", "last_name" => "", "password" => "", "email" => ""]);
+            Auth::login($user);
         }
 
         $carrito = Carrito::where('id_user', $user->id)->where('id_producto', $idProducto)->where('talla', $talla)->where('color', $color)->first();
@@ -77,7 +79,21 @@ class CarritoController extends Controller
         $carrito->update(["color" => $color, "talla" => $talla, "cantidad" => $cantidad]);
         return response()->json(['Mensaje' => 'Carrito actualizado'], 200);
     }
-
+    public function verificarUsuario() {
+        // Verifica si el usuario está autenticado
+        $user = auth()->user();
+        
+        // Si el usuario no está autenticado, lanza un error 401 (No autorizado)
+        if (!$user){
+            abort(401, "Debe iniciar sesión para continuar.");
+        }
+    
+        // Verifica si el email del usuario está vacío
+        if (empty($user->email)) {
+            // Si el email está vacío, lo redirige a la vista "datos"
+            return view("datos");
+        }
+    }
 
     public function direccionEnvio()
     {
@@ -139,7 +155,7 @@ class CarritoController extends Controller
         $user->country = $direccion_envio["country"];
         $user->province = $direccion_envio["province"];
 
-        $direccion_envio=$user->direccion();
+        $direccion_envio = $user->direccion();
 
         //Creamos el pedido
         $pedido = Pedido::create([
