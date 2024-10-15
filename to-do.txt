@@ -10,9 +10,11 @@ testear casos de uso:
 -Gestión de pedidos.
 
 
-Redimensionar imagen SEO opengraph
+Añadir productos, añadir dos imagenes, y arreglar stock.
 
-Añadir productos.
+Actualizar web php para que tenga la ruta de guardar stock.
+
+Crear metodo para guardar stock
 
 Responsive.
 
@@ -22,8 +24,16 @@ Cuando editas el perfil de usuario te dice el email already taken.
 
 Arreglar los productos en la descripcion aparece informacion de la fuente.
 
+Poner cantidad de cada talla.
+
 Arreglar reseñas aparece información del detalle.
 
 Añadir mas fotos en un mismo producto.
 
 Añadir mas tipos de productos.
+
+Poner el euro en los precios
+
+Pantalla Home añadir un apartado con nuevos productos.
+
+Pantalla home añadir un carrousel para poner ofertas o algun evento

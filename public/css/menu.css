@@ -185,6 +185,9 @@ a {
     line-height: 0.5;
     font-weight: 700;
 }
+.badge{
+font-size: 10px;
+}
 
 /*REGLAS BOTONES BÁSICOS END*/
 /* Media query para resoluciones de 320 pixeles */
@@ -270,7 +273,7 @@ a {
         min-width: 100%;
         min-height: 100%;
         position: absolute;
-        top: 71px;
+        top: 55px;
         left: 0;
         transition: transform 0.4s;
     }
@@ -592,6 +595,16 @@ a {
 
     /*FOOTER MENU END*/
 }
+@media screen and (min-width: 768px) {
+    #search-enlace {
+        font-size: 20px;
+       
+    }
+    #cart-icon{
+        font-size: 20px;
+    }
+
+}
 
 /* Media query para resoluciones de 1024 pixeles */
 @media screen and (min-width: 1024px) {
@@ -746,13 +759,21 @@ a {
 
     .dropdown-menu-user {
         left: -50px;
-        top: 59px;
+        top: 54px;
         min-width: 129px;
         min-height: 73px;
     }
 
     #user-icon {
         color: #fff;
+        font-size: 15px;
+    }
+    #search-enlace {
+        font-size: 15px;
+       
+    }
+    #cart-icon{
+        font-size: 15px;
     }
 
     .shoppingcart-ctn {

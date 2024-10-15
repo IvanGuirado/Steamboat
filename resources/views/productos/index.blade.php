@@ -19,6 +19,8 @@
                             <div class="buttons-edition">
                                 <button class="boton2" onclick="eliminar({{ $producto->id }})">{{ __('Eliminar') }}</button>
                                 <a href="{{ route('productos.edit', $producto->id) }}" class="boton1">{{ __('Editar') }}</a>
+                                <a href="{{ route('productos.stock', $producto->id) }}" class="boton1">{{ __('Stock') }}</a>
+
                             </div>
                         @endif
                     </div>

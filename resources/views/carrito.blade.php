@@ -1,6 +1,6 @@
 <div class="wrapper">
     @if (!count($data))
-    <h2>{{ __('Su carrito está vacio') }}</h2>
+    <h2>{{ __('Su carrito está carrito está vacio') }}</h2>
     @else
         <form class="carrito" action="/carrito/" method="post" id="carrito-productos">
             @csrf

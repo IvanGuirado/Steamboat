@@ -16,7 +16,7 @@
 }
 
 .icon-close::before, .icon-close::after {
-    background-color: #fff;
+    background-color: #3d3d4a;
     border-radius: 4px;
     content: " ";
     height: 20px;
@@ -78,16 +78,18 @@
 
 .off-canvas-header {
     align-items: center;
-    background-color: #3d3d4a;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px
+    padding: 60px 30px
 }
 
 .off-canvas-title {
-    color: #fff;
+    color: #3d3d4a;
     letter-spacing: .05rem;
-    margin: 0
+    margin: 0;
+    font-size: 1.5em;
+    
 }
 
 .carrito-item {

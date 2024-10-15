@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inventario;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -114,7 +115,7 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'nombre' => ['required', 'regex:/^[A-Za-z\sñáéíóúÁÉÍÓÚ]*$/', 'max:50'],
             'colores' => ['required', 'regex:/^[,A-Za-z\sñáéíóúÁÉÍÓÚ]*$/', 'max:70'],
-            'tallas' => ['required', 'regex:/^[,A-Za-z\s]*$/', 'max:20'],
+            'tallas' => ['required', 'regex:/^[,A-Za-z\sñáéíóúÁÉÍÓÚ]*$/', 'max:20'],
             'descripcion' => ['required', 'max:200'],
             'imagen' => 'max:300000',
             'detalle' => ['required', 'max:999'],
@@ -153,9 +154,52 @@ class ProductController extends Controller
         return 'Producto eliminado';
     }
 
-    public function stock(Request $request)
+    public function list(Request $request)
     {
         $productos = Producto::paginate(25);
         return view('productos.stock', compact('productos'));
     }
+
+    public function stock($id)
+    {
+
+        $producto = Producto::findOrFail($id);
+        $inventario=Inventario::where('id_producto',$id)->get();
+        return view('productos.stockEdit', ['producto' => $producto, 'inventario'=>$inventario]);
+    }
+    public function stockUpdate(Request $request, $id)
+    {
+
+        $validatedData = $request->validate([
+            'nombre' => ['required', 'regex:/^[A-Za-z\sñáéíóúÁÉÍÓÚ]*$/', 'max:50'],
+            'colores' => ['required', 'regex:/^[,A-Za-z\sñáéíóúÁÉÍÓÚ]*$/', 'max:70'],
+            'tallas' => ['required', 'regex:/^[,A-Za-z\sñáéíóúÁÉÍÓÚ]*$/', 'max:20'],
+            'descripcion' => ['required', 'max:200'],
+            'imagen' => 'max:300000',
+            'detalle' => ['required', 'max:999'],
+            'categoria' => ['required', 'max:100'],
+            'precio' => ['required', 'regex:/^[0-9\s]*$/', 'numeric', 'min:10', 'max:999'],
+            'stock' => ['required', 'numeric', 'min:0', 'max:999'],
+        ]);
+        $producto = Producto::findOrFail($id);
+        $producto->nombre = $request->input('nombre');
+        $producto->colores = $request->input('colores');
+        $producto->tallas = $request->input('tallas');
+        $producto->descripcion = $request->input('descripcion');
+        $producto->detalle = $request->input('detalle');
+        $producto->categoria = $request->input('categoria');
+        $producto->precio = $request->input('precio');
+        $producto->stock = $request->input('stock');
+        if ($request->imagen) {
+            $fileName = $request->file('imagen')->getClientOriginalName();
+            $request->file('imagen')->move(public_path('uploads'), $fileName);
+            $producto->imagen = "/uploads/$fileName";
+        }
+
+        // Actualiza otros campos del producto según sea necesario
+        $producto->save();
+
+        return redirect('/productos')->with('success', 'Producto actualizado correctamente');
+    }
+
 }

@@ -67,6 +67,8 @@
                                     <div class="dropdown-menu dropdown dropdown-menu-nav" id="hombreDropdown">
                                         <a href="/productos?categoria=camisetas,hombre">{{ __('Camisetas') }}</a>
                                         <a href="/productos?categoria=sudaderas,hombre">{{ __('Sudaderas') }}</a>
+                                        <a href="/productos?categoria=hoodies,hombre">{{ __('Hoddies') }}</a>
+                                        <a href="/productos?categoria=banadores,hombre">{{ __('Bañadores') }}</a>
                                         <a href="/productos?categoria=accesorios,hombre">{{ __('Accesorios') }}</a>
                                     </div>
                                 </li>
@@ -75,6 +77,8 @@
                                     <div class="dropdown-menu dropdown dropdown-menu-nav" id="mujerDropdown">
                                         <a href="/productos?categoria=camisetas,mujer">{{ __('Camisetas') }}</a>
                                         <a href="/productos?categoria=sudaderas,mujer">{{ __('Sudaderas') }}</a>
+                                        <a href="/productos?categoria=hoodies,mujer">{{ __('Hoddies') }}</a>
+                                        <a href="/productos?categoria=banadores,mujer">{{ __('Bañadores') }}</a>
                                         <a href="/productos?categoria=accesorios,mujer">{{ __('Accesorios') }}</a>
                                     </div>
                                 </li>
@@ -94,7 +98,7 @@
                                         <i class="fa fa-chevron-right dropdown-selector " id="show-gestion"></i>
                                         <div class="dropdown-menu dropdown dropdown-menu-nav" id="gestionDropdown">
                                             <a href="/productos/create">{{ __('Crear producto') }}</a>
-                                            <a class="stock" href="/stock">{{ __('Inventario') }}</a>
+                                            <a class="stock" href="/admin">{{ __('Inventario') }}</a>
                                             <a class="pedidos" href="/pedidos">{{ __('Pedidos') }}</a>
                                         </div>
                                     </li>
@@ -134,7 +138,7 @@
                     <div class="shoppingcart-ctn menu-item" alt="carrito">
                         <div class="boton-carrito dropdown-selector">
                             <div class="badge badge-empty"></div>
-                            <i class="fa fa-shopping-cart"></i>
+                            <i class="fa fa-shopping-cart" id="cart-icon"></i>
                         </div>
                         <div class="burbuja" id="burbuja"></div>
                     </div>
@@ -178,7 +182,7 @@
     <div class="off-canvas">
         <div class="off-canvas-header">
             <h4 class="off-canvas-title">
-                {{ __('Carrito de compra') }}
+                {{ __('CARRITO DE COMPRA') }}
             </h4>
             <div data-bs-dismiss="off-canvas" aria-label="Close">
                 <div class="icon-close"></div>

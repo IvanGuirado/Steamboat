@@ -25,7 +25,8 @@
                 <input type="file" name="imagen" accept="image/*">
                 <input type="text" name="nombre" required placeholder="Nombre"
                     value="{{ old('nombre', $producto->nombre) }}">
-                <input type="text" name="nombre_en" required placeholder="Name" value="{{ old('nombre_en') }}">
+                <input type="text" name="nombre_en" required placeholder="Name"
+                    value="{{ old('nombre_en', $producto->nombre_en) }}">
                 <div class="talla-container">
                     <label for="talla">Talla</label>
                     <input type="text" name="tallas" required placeholder="Tallas"
@@ -43,17 +44,16 @@
                 <input type="text" name="descripcion" required placeholder="Descripción"
                     value="{{ old('descripcion', $producto->descripcion) }}">
                 <input type="text" name="descripcion_en" required placeholder="Description" class="create_inputs"
-                    value="{{ old('descripcion_en') }}">
+                    value="{{ old('descripcion_en', $producto->descripcion_en) }}">
                 <textarea name="detalle" cols="30" rows="10">{{ old('detalle', $producto->detalle) }}</textarea>
-                <textarea name="detalle_en" cols="30" rows="10">{{ old('detalle_en') }}</textarea>
+                <textarea name="detalle_en" cols="30" rows="10">{{ old('detalle_en', $producto->detalle_en) }}</textarea>
                 <br>
-                <input type="number" name="stock" required placeholder="stock"
-                    value="{{ old('stock', $producto->stock) }}">
                 <div class="save">
                     <button class="boton3" type="submit">Guardar cambios</button>
                 </div>
             </form>
         </div>
+       
     </div>
 
     <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
