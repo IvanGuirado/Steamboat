@@ -2,7 +2,7 @@
 
 @section('title', '¿Quienes somos?')
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         <div class="quienes-somos-container">
             <div class="quien-titulo">

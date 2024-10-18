@@ -2,7 +2,7 @@
 
 @section('title', '¿Devolución?')
 
-@section('content')
+@section('content1')
 <div class="wrapper">
     <div class="devolucion-container">
         <div class="devolucion-titulo">

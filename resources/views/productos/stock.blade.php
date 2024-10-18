@@ -1,52 +1,80 @@
-<link rel="stylesheet" href="/css\stock.css" type="text/css">
 @extends('layouts.plantilla')
 
-@section('title', 'Productos')
+@section('content1')
+    <div class="container">
+        <h1>Stock de {{ $producto->nombre }}</h1>
 
-@section('content')
-    <div class="wrapper">
-        <div class="stock-container">
-            <div class="stock-titulo">
-                <h1>STOCK</h1>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
             </div>
-            <table id="stock_table" class="sortable asc">
+        @endif
+
+        <form action="{{ route('productos.updateStock', $producto->id) }}" method="POST">
+            @csrf
+
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
                         <th>Talla</th>
                         <th>Color</th>
-                        <th>Categoria</th>
-                        <th>Descripción</th>
-                        <th>Detalle</th>
-                        <th>Stock</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($productos as $producto)
+                    @foreach ($stock as $index => $item)
                         <tr>
-                            <td>{{ old('id', $producto->id) }}</td>
-                            <td><img src="{{ $producto->imagen }}" style="max-height: 300px"></td>
-                            <td>{{ old('nombre', $producto->nombre) }}</td>
-                            <td>{{ old('precio', $producto->precio) }}</td>
-                            <td>{{ old('talla', $producto->talla) }}</td>
-                            <td>{{ old('color', $producto->color) }}</td>
-                            <td>{{ old('categoria', $producto->categoria) }}</td>
-                            <td>{{ old('descripcion', $producto->descripcion) }}</td>
-                            <td>{{ old('detalle', $producto->detalle) }}</td>
-                            <td readonly>{{ old('stock', $producto->stock) }}</td>
+                            <td><input type="text" name="stock[][talla]" placeholder="Talla"
+                                    value="{{ $item->talla }}" required></td>
+                            <td><input type="text" name="stock[][color]" placeholder="Color"
+                                    value="{{ $item->color }}" required></td>
+                            <td><input type="number" name="stock[][cantidad]" placeholder="Cantidad"
+                                    value="{{ $item->cantidad }}" required></td>
                             <td>
-                                <div id="edit-stock">
-                                    <a href="{{ route('productos.edit', $producto->id) }}"  class="boton1">Editar</a></span>
-                                </div>
+                                <button onclick="eliminar_Fila()">Eliminar</button>
                             </td>
                         </tr>
                     @endforeach
+                    <tr>
+                        <td><input type="text" name="stock[][talla]" placeholder="Talla" required>
+                        </td>
+                        <td><input type="text" name="stock[][color]" placeholder="Color" required>
+                        </td>
+                        <td><input type="number" name="stock[][cantidad]" placeholder="Cantidad"
+                                required></td>
+                        <td>
+                            <button onclick="eliminar_Fila()">Eliminar</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
-        </div>
-        {{ $productos->links('pagination.simple-default') }}
+
+            <button type="button" id="addRow" class="btn btn-secondary">Añadir otra fila</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
     </div>
-@stop
+
+    <script>
+        document.getElementById('addRow').onclick = function() {
+            var table = document.querySelector('tbody');
+            var rowCount = table.children.length; // -1 to exclude the new row
+            var newRow = `<tr>
+            <td><input type="text" name="stock[][talla]" placeholder="Talla" required></td>
+            <td><input type="text" name="stock[][color]" placeholder="Color" required></td>
+            <td><input type="number" name="stock[][cantidad]" placeholder="Cantidad" required></td>
+            <td><button onclick="eliminar_Fila()">Eliminar</button>
+                            </td>
+        </tr>`;
+            table.insertAdjacentHTML('beforeend', newRow);
+        }
+
+        function eliminar_Fila() {
+            event.preventDefault();
+            var tr = event.target.closest("tr");
+            //Elimimamos la fila tr de la tabla
+            tr.parentNode.removeChild(tr);
+
+        }
+    </script>
+@endsection

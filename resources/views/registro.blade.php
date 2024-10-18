@@ -3,7 +3,7 @@
 @section('title', 'registro')
 
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         <div class="registro-container">
             <div class="nombre-pag">

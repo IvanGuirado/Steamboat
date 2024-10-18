@@ -2,7 +2,7 @@
 
 @section('title', 'show')
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         <p>{{__("Estado")}}:{{ $pedido->estado }}</p>
         <p>{{__("Usuario")}}:{{ $pedido->user_id }}</p>

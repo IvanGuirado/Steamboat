@@ -3,7 +3,7 @@
 @section('title', 'pedido_realizado')
 
 
-@section('content')
+@section('content1')
     <div class="">
         <h1>¡Pedido Realizado con Éxito!</h1>
         <p>Gracias por tu pedido. Hemos recibido la información y estamos procesándola.</p>

@@ -36,9 +36,9 @@ Route::delete('/productos/{id}', [ProductController::class,'destroy'])->name('pr
 Route::get('/productos/{id}', [ProductController::class,'show'])->name('productos.show');
 Route::get('/productos/{id}/edit', [ProductController::class, 'edit'])->name('productos.edit');
 Route::get('/productos/{id}/stock', [ProductController::class, 'stock'])->name('productos.stock');
-Route::get('/admin', [ProductController::class,'list'])->name('productos.list');
+Route::get('/admin', [ProductController::class,'admin'])->name('productos.admin');
 Route::put('/productos/{id}', [ProductController::class, 'update'])->name('productos.update');
-Route::put('/productos/{id}/stock', [ProductController::class, 'updateStock'])->name('productos.updateStock');
+Route::post('/productos/{id}/stock', [ProductController::class, 'updateStock'])->name('productos.updateStock');
 
 
 //USUARIO

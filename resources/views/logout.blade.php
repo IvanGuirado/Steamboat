@@ -3,7 +3,7 @@
 @section('title', 'login')
 
 
-@section('content')
+@section('content1')
     <div class="login-container">
         <div class="login-pag">
             <h1>CERRAR SESIÓN</h1>

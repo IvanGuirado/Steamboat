@@ -17,7 +17,7 @@
     }
 @endphp
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         <div class="product-container">
             <!--<div class="id">

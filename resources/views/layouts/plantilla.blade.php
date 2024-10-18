@@ -98,7 +98,7 @@
                                         <i class="fa fa-chevron-right dropdown-selector " id="show-gestion"></i>
                                         <div class="dropdown-menu dropdown dropdown-menu-nav" id="gestionDropdown">
                                             <a href="/productos/create">{{ __('Crear producto') }}</a>
-                                            <a class="stock" href="/admin">{{ __('Inventario') }}</a>
+                                            <a class="admin" href="/admin">{{ __('Inventario') }}</a>
                                             <a class="pedidos" href="/pedidos">{{ __('Pedidos') }}</a>
                                         </div>
                                     </li>
@@ -174,7 +174,7 @@
         </nav>
     </header>
     <div class="content">
-        @yield('content')
+        @yield('content0')
         @yield('content1')
         @yield('content2')
         @yield('content3')
@@ -233,6 +233,7 @@
     <script type="text/javascript" src="/js\stock.js" defer></script>
     <script src="js/vendor/sortable.js"></script>
     <script src="js/vendor/sortable.a11y.js"></script>
+    <script type="text/javascript" src="/js\carrousel.js"></script>
 </body>
 
 </html>

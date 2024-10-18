@@ -2,7 +2,7 @@
 
 @section('title', 'Productos')
 
-@section('content')
+@section('content1')
     <div class="productos-container">
         <div class="resultados-titulo">
             <h1>{{__("RESULTADOS")}}</h1>

@@ -2,7 +2,7 @@
 
 @section('title', 'Pedidos')
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         <table id="pedido_table" class="sortable asc">
             <div class="pedido-container">

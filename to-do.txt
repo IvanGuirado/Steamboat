@@ -37,3 +37,9 @@ Poner el euro en los precios
 Pantalla Home añadir un apartado con nuevos productos.
 
 Pantalla home añadir un carrousel para poner ofertas o algun evento
+
+Cuando modal de busqueda desactivar scroll de la página
+
+Mejorar cierre de modal de buscar
+
+Arreglar tamaño de imagen en productos relacionados.

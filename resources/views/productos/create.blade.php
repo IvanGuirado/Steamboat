@@ -2,7 +2,7 @@
 
 @section('title', 'create')
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         @if ($errors->any())
             <div class="alert alert-danger">

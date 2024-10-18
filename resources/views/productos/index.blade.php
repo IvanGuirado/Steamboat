@@ -2,7 +2,7 @@
 
 @section('title', 'Productos')
 
-@section('content')
+@section('content1')
     <div class="wrapper">
         <div class="productos-container">
             @foreach ($productos as $producto)

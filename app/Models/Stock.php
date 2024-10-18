@@ -8,9 +8,9 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 
-class Inventario extends Model
+class Stock extends Model
 {
-    protected $table ='inventario';
+    protected $table ='stock';
     protected $fillable = [
         'id_producto',
         'talla',
