@@ -6,23 +6,36 @@
 
     $lang = session()->get('lang');
     if ($lang) {
-       // App::setLocale($lang);
+        // App::setLocale($lang);
     }
 
     $user = auth()->user();
 
     if ($user != null) {
-        $lang=$user->language;
+        $lang = $user->language;
         //App::setLocale($user->language);
     }
 @endphp
 
 @section('content1')
+    <script>
+        //pasamos los datos del $stock a una variable de javascript llamada stock
+        var stock = @json($stock);
+        //creamos un objeto de disponibilidad agrupado por talla
+        var disponibilidad = {};
+        for (var i = 0; i < stock.length; i++) {
+            if (!disponibilidad[stock[i].talla]) {
+                disponibilidad[stock[i].talla] = [];
+            }
+            disponibilidad[stock[i].talla].push(stock[i].color);
+        }
+        console.log(disponibilidad);
+    </script>
     <div class="wrapper">
         <div class="product-container">
             <!--<div class="id">
-                                                                        <h1>{{ $producto->id }}</h1>
-                                                                    </div>-->
+                                                                                <h1>{{ $producto->id }}</h1>
+                                                                            </div>-->
             <div class="img-container">
                 <img src="{{ $producto->imagen }}" alt="imagen-producto">
             </div>
@@ -100,31 +113,29 @@
                 <div class="container-social">
                     <span>{{ __('Compartir') }}</span>
                     <div class="container-buttons-social">
-                        <a href="mailto:?subject=Visita%20mi%20sitio%20web&body=Hola,%20te%20invito%20a%20visitar%20mi%20sitio%20web:%20http://steamboatbrand.com" 
-                        aria-label="Enviar correo">
+                        <a href="mailto:?subject=Visita%20mi%20sitio%20web&body=Hola,%20te%20invito%20a%20visitar%20mi%20sitio%20web:%20http://steamboatbrand.com"
+                            aria-label="Enviar correo">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
-                        <a href="https://www.facebook.com/sharer.php?u={{ url()->current() }}" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="Compartir en Facebook">
-                             <i class="fa-brands fa-facebook"></i>
-                         </a>
-                        <a href="https://twitter.com/intent/tweet?text={{ $producto ? $producto->nombre : 'steamboat' }}&url={{ url()->current() }}&via=Steamboat" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="Compartir en Twitter">
-                             <i class="fa-brands fa-square-x-twitter"></i>
-                         </a>
+                        <a href="https://www.facebook.com/sharer.php?u={{ url()->current() }}" target="_blank"
+                            rel="noopener noreferrer" aria-label="Compartir en Facebook">
+                            <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/?url={{url()->current()}}" target="_blank" rel="noopener noreferrer" aria-label="Ir al perfil de Instagram">
+                        <a href="https://twitter.com/intent/tweet?text={{ $producto ? $producto->nombre : 'steamboat' }}&url={{ url()->current() }}&via=Steamboat"
+                            target="_blank" rel="noopener noreferrer" aria-label="Compartir en Twitter">
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                        </a>
+                        </a>
+                        <a href="https://www.instagram.com/?url={{ url()->current() }}" target="_blank"
+                            rel="noopener noreferrer" aria-label="Ir al perfil de Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://api.whatsapp.com/send?text={{url()->current()}}" target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp">
+                        <a href="https://api.whatsapp.com/send?text={{ url()->current() }}" target="_blank"
+                            rel="noopener noreferrer" aria-label="Compartir en WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -153,4 +164,34 @@
 
     <!--script-->
     <script type="text/javascript" src="/js\producto.js"></script>
+    <script>
+        function mapearTallas() {
+
+            //Recreamos las opciones del select de tallas en funcion de los datos de disponibilidad
+            var tallas = Object.keys(disponibilidad);
+
+            const selectTallas = document.getElementById("size");
+            selectTallas.innerHTML = tallas.map(talla => `<option value="${talla}">${talla}</option>`).join("");
+            //Elegimos el primer elemento del select de tallas
+            selectTallas.selectedIndex = 0;
+
+        }
+
+        function mapearColores() {
+
+            //Recreamos las opciones del select de colores enn funcion de los datos de disponibilidad y la talla selecionada
+            var colores = disponibilidad[document.getElementById("size").value];
+
+            const selectColores = document.getElementById("colour");
+            selectColores.innerHTML = colores.map(color => `<option value="${color}">${color}</option>`).join("");
+            //Elegimos el primer elemento del select de colores
+            selectColores.selectedIndex = 0;
+        }
+        mapearTallas();
+        mapearColores();
+        //Cuando cambiamos la talla selecionada, actualizamos los colores disponibles
+        document.getElementById("size").addEventListener("change", function() {
+            mapearColores();
+        });
+    </script>
 @stop

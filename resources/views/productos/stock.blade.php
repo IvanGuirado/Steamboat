@@ -36,17 +36,7 @@
                             </td>
                         </tr>
                     @endforeach
-                    <tr>
-                        <td><input type="text" name="stock[][talla]" placeholder="Talla" required>
-                        </td>
-                        <td><input type="text" name="stock[][color]" placeholder="Color" required>
-                        </td>
-                        <td><input type="number" name="stock[][cantidad]" placeholder="Cantidad"
-                                required></td>
-                        <td>
-                            <button onclick="eliminar_Fila()">Eliminar</button>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
 

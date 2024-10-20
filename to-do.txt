@@ -43,3 +43,5 @@ Cuando modal de busqueda desactivar scroll de la página
 Mejorar cierre de modal de buscar
 
 Arreglar tamaño de imagen en productos relacionados.
+
+Redirecionar a la página de productos después de actualizar stock.

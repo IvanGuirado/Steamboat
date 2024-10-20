@@ -17,15 +17,12 @@ class Producto extends Model
         'imagen',
         'nombre',
         'nombre_en',
-        'colores',
-        'tallas',
         'descripcion',
         'descripcion_en',
         'detalle',
         'detalle_en',
         'categoria',
         'precio',
-        'stock',
 
     ];
     // 

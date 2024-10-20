@@ -41,6 +41,7 @@
                             <td>
                                 <div id="edit-stock">
                                     <a href="{{ route('productos.edit', $producto->id) }}"  class="boton1">Editar</a></span>
+                                    <a href="{{ route('productos.stock', $producto->id) }}" class="boton1">{{ __('Stock') }}</a>
                                 </div>
                             </td>
                         </tr>

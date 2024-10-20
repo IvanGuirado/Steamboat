@@ -22,17 +22,6 @@
                 <input type="file" name="imagen" required accept="image/*" class="img_crear">
                 <input class="create_inputs" name="nombre" required placeholder="Nombre" value="{{ old('nombre') }}">
                 <input class="create_inputs" name="nombre_en" required placeholder="Name" value="{{ old('nombre_en') }}">
-                <div class="talla-container">
-                    <label for="talla">Talla</label>
-                    <input type="text" name="tallas" required placeholder="Tallas" class="create_inputs"
-                    value="{{ old('tallas') }}">
-                </div>
-                <div class="color-container">
-                    <label for="color">Color</label>
-                    <input type="text" name="colores" required placeholder="Colores" class="create_inputs"
-                    value="{{ old('colores') }}">
-                </div>
-                
                 <input type="number" name="precio" required placeholder="Precio" class="create_inputs" value="{{ old('precio') }}">
                 <input type="text" name="categoria" required placeholder="Categoria" class="create_inputs" value="{{ old('categoria') }}">
                 <input type="text" name="descripcion" required placeholder="Descripción" class="create_inputs"

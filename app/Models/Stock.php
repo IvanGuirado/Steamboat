@@ -9,7 +9,7 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 
 class Stock extends Model
-{
+{public $timestamps = false;
     protected $table ='stock';
     protected $fillable = [
         'id_producto',

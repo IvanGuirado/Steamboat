@@ -27,16 +27,6 @@
                     value="{{ old('nombre', $producto->nombre) }}">
                 <input type="text" name="nombre_en" required placeholder="Name"
                     value="{{ old('nombre_en', $producto->nombre_en) }}">
-                <div class="talla-container">
-                    <label for="talla">Talla</label>
-                    <input type="text" name="tallas" required placeholder="Tallas"
-                        value="{{ old('tallas', $producto->tallas) }}">
-                </div>
-                <div class="color-container">
-                    <label for="color">Color</label>
-                    <input type="text" name="colores" required placeholder="Colores"
-                        value="{{ old('colores', $producto->colores) }}">
-                </div>
                 <input type="number" name="precio" required placeholder="Precio"
                     value="{{ old('precio', $producto->precio) }}" min="5">
                 <input type="text" name="categoria" required placeholder="Categoria"
