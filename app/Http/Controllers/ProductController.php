@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stock;
+use App\Models\Imagen;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -153,10 +154,9 @@ class ProductController extends Controller
 
     public function stock(Request $request, $id)
     {
-//Guardamos en la sesion el FROM
-        session(['from' => $request->from]);
+        //Guardamos en la sesion el FROM
+        session(['from' => $request->headers->get('referer')]);
 
- 
         $producto = Producto::findOrFail($id);
         $stock = Stock::where('id_producto', $id)->get();
         return view('productos.stock', ['producto' => $producto, 'stock' => $stock]);
@@ -188,8 +188,57 @@ class ProductController extends Controller
                 'cantidad' => $item['cantidad'],
             ]);
         }
-        return redirect('/productos')->with('success', 'Producto actualizado correctamente');
+        $from=session('from');
+        if(!$from){
+            $from='/productos';
+        }
+        return redirect($from)->with('success', 'Producto actualizado correctamente');
         //recuperamon en FROM de la sesion y redirecionamos 
-       // return redirect(session('from'))->with('success', 'Producto actualizado correctamente');
+        // return redirect(session('from'))->with('success', 'Producto actualizado correctamente');
+    }
+
+    public function imagenes(Request $request, $id)
+    {
+        //Guardamos en la sesion el FROM
+        session(['from' => $request->headers->get('referer')]);
+
+        $producto = Producto::findOrFail($id);
+        $imagenes = Imagen::where('id_producto', $id)->get();
+        return view('productos.imagenes', ['producto' => $producto, 'imagenes' => $imagenes]);
+    }
+    public function updateImagenes(Request $request, $id)
+    { //Mostramos toda información que nos llega del formulario
+        $stockData = $request->stock;
+        $producto = Producto::findOrFail($id);
+        // Inicializar un array vacío para las agrupaciones de stock
+        $agrupaciones = [];
+
+        // Agrupando cada conjunto de talla, color y cantidad
+        for ($i = 0; $i < count($stockData); $i += 3) {
+            $agrupaciones[] = [
+                'talla' => $stockData[$i]['talla'],
+                'color' => $stockData[$i + 1]['color'],
+                'cantidad' => $stockData[$i + 2]['cantidad'],
+            ];
+        }
+
+        Stock::where('id_producto', $id)->delete();
+
+        // Iterar sobre los datos agrupados y crear los registros de stock
+        foreach ($agrupaciones as $item) {
+            Stock::create([
+                'id_producto' => $producto->id,
+                'talla' => $item['talla'],
+                'color' => $item['color'],
+                'cantidad' => $item['cantidad'],
+            ]);
+        }
+        $from=session('from');
+        if(!$from){
+            $from='/productos';
+        }
+        return redirect($from)->with('success', 'Producto actualizado correctamente');
+        //recuperamon en FROM de la sesion y redirecionamos 
+        // return redirect(session('from'))->with('success', 'Producto actualizado correctamente');
     }
 }

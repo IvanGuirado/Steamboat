@@ -12,10 +12,6 @@ testear casos de uso:
 
 Añadir productos, añadir dos imagenes, y arreglar stock.
 
-Actualizar web php para que tenga la ruta de guardar stock.
-
-Crear metodo para guardar stock
-
 Responsive.
 
 Arreglar mensaje bienvenida email
@@ -23,10 +19,6 @@ Arreglar mensaje bienvenida email
 Cuando editas el perfil de usuario te dice el email already taken.
 
 Arreglar los productos en la descripcion aparece informacion de la fuente.
-
-Poner cantidad de cada talla.
-
-Arreglar reseñas aparece información del detalle.
 
 Añadir mas fotos en un mismo producto.
 
@@ -44,4 +36,4 @@ Mejorar cierre de modal de buscar
 
 Arreglar tamaño de imagen en productos relacionados.
 
-Redirecionar a la página de productos después de actualizar stock.
+Incliuir reseñas.

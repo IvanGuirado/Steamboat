@@ -35,10 +35,15 @@ Route::post('/productos', [ProductController::class,'store'])->name('productos.s
 Route::delete('/productos/{id}', [ProductController::class,'destroy'])->name('productos.destroy');
 Route::get('/productos/{id}', [ProductController::class,'show'])->name('productos.show');
 Route::get('/productos/{id}/edit', [ProductController::class, 'edit'])->name('productos.edit');
-Route::get('/productos/{id}/stock', [ProductController::class, 'stock'])->name('productos.stock');
+
 Route::get('/admin', [ProductController::class,'admin'])->name('productos.admin');
 Route::put('/productos/{id}', [ProductController::class, 'update'])->name('productos.update');
+Route::get('/productos/{id}/stock', [ProductController::class, 'stock'])->name('productos.stock');
 Route::post('/productos/{id}/stock', [ProductController::class, 'updateStock'])->name('productos.updateStock');
+
+Route::get('/productos/{id}/imagenes', [ProductController::class, 'imagenes'])->name('productos.imagenes');
+Route::post('/productos/{id}/agregarImagen', [ProductController::class, 'agregarImagen'])->name('productos.agregarImagen');
+Route::post('/productos/{id}/eliminarImagen', [ProductController::class, 'eliminarImagen'])->name('productos.eliminarImagen');
 
 
 //USUARIO

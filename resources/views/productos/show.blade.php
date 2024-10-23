@@ -97,7 +97,7 @@
                         <i class="fa fa-chevron-down"></i>
                     </div>
                     <div class="text-additional-information hidden">
-                        <p>{{ $lang == 'en' ? $producto->detalle_en : $producto->detalle }}</p>
+                        <p>{!! $lang == 'en' ? $producto->detalle_en : $producto->detalle !!}</p>
                     </div>
                 </div>
                 <div class="container-reviews">
@@ -106,7 +106,7 @@
                         <i class="fa fa-chevron-down"></i>
                     </div>
                     <div class="text-reviews hidden">
-                        <p>{{ $producto->detalle }}</p>
+                        <p></p>
                     </div>
                 </div>
 
