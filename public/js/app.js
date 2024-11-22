@@ -19,16 +19,35 @@ close.addEventListener("click", function () {
     m.checked = false;
     document.body.classList.remove("menu-active")
 });
-
+/*
 // Cierra el menú si se hace clic fuera de él
-document.addEventListener("click", function (event) {
+const tapItems = document.querySelectorAll(".nav-tap");
+tapItems.forEach(function (item) {
+    item.addEventListener("mouseenter", function () {
+
+        //document.body.classList.add("menu-active")
+        item.classList.add("desplegado")
+    });
+});
+
+tapItems.forEach(function (item) {
+    item.addEventListener("mouseleave", function () {
+
+        setTimeout(function () {
+            item.classList.remove("desplegado")
+        }, 1000);
+        //document.body.classList.remove("menu-active")
+    });
+});
+*/
+/*document.addEventListener("click", function (event) {
     const elem = document.querySelector(".desplegado")
     if (elem) elem.classList.remove("desplegado")
     if (event.target.matches(".dropdown-selector")) {
         if (event.target.parentNode != elem)
             event.target.parentNode.classList.toggle("desplegado")
     }
-});
+});*/
 /*Desactivación entrada de teclado para un campo de entrada numérica */
 var numberInputs = document.querySelectorAll('.cantidad');
 

@@ -10,7 +10,8 @@ testear casos de uso:
 -Gestión de pedidos.
 
 
-Añadir productos, añadir dos imagenes, y arreglar stock.
+
+Portado:rejilla de tarjetas con carrousel en hover.
 
 Responsive.
 
@@ -18,22 +19,23 @@ Arreglar mensaje bienvenida email
 
 Cuando editas el perfil de usuario te dice el email already taken.
 
-Arreglar los productos en la descripcion aparece informacion de la fuente.
-
 Añadir mas fotos en un mismo producto.
 
-Añadir mas tipos de productos.
-
 Poner el euro en los precios
-
-Pantalla Home añadir un apartado con nuevos productos.
 
 Pantalla home añadir un carrousel para poner ofertas o algun evento
 
 Cuando modal de busqueda desactivar scroll de la página
 
-Mejorar cierre de modal de buscar
+Mejorar cierre de modal de buscar(cruz muy pequeña).
 
 Arreglar tamaño de imagen en productos relacionados.
 
 Incliuir reseñas.
+
+codesmell.
+
+menu navegacion hover.
+
+vista targeta producto carrousel hover y tallas cuando hover
+

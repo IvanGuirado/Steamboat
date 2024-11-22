@@ -89,7 +89,8 @@ class ProductController extends Controller
             }
         });
         $stock = Stock::where('id_producto', $producto->id)->where('cantidad', '>', 0)->get();
-        return view('productos.show', ['producto' => $producto, 'relacionados' => $relacion->take(4)->get(), 'stock' => $stock]);
+        $imagenes=Imagen::where('id_producto', $producto->id)->orderBy('color')->get();
+        return view('productos.show', ['producto' => $producto, 'relacionados' => $relacion->take(4)->get(), 'stock' => $stock, 'imagenes'=> $imagenes]);
     }
 
     /**
@@ -206,39 +207,32 @@ class ProductController extends Controller
         $imagenes = Imagen::where('id_producto', $id)->get();
         return view('productos.imagenes', ['producto' => $producto, 'imagenes' => $imagenes]);
     }
-    public function updateImagenes(Request $request, $id)
+    public function eliminarImagen(Request $request, $id_imagen)
     { //Mostramos toda información que nos llega del formulario
-        $stockData = $request->stock;
-        $producto = Producto::findOrFail($id);
-        // Inicializar un array vacío para las agrupaciones de stock
-        $agrupaciones = [];
-
-        // Agrupando cada conjunto de talla, color y cantidad
-        for ($i = 0; $i < count($stockData); $i += 3) {
-            $agrupaciones[] = [
-                'talla' => $stockData[$i]['talla'],
-                'color' => $stockData[$i + 1]['color'],
-                'cantidad' => $stockData[$i + 2]['cantidad'],
-            ];
-        }
-
-        Stock::where('id_producto', $id)->delete();
-
-        // Iterar sobre los datos agrupados y crear los registros de stock
-        foreach ($agrupaciones as $item) {
-            Stock::create([
-                'id_producto' => $producto->id,
-                'talla' => $item['talla'],
-                'color' => $item['color'],
-                'cantidad' => $item['cantidad'],
-            ]);
-        }
-        $from=session('from');
-        if(!$from){
-            $from='/productos';
-        }
-        return redirect($from)->with('success', 'Producto actualizado correctamente');
+       Imagen::where('id', $id_imagen)->delete();
+        //volvemos a la pagina anterior
+        return redirect()->back()->with('success', 'Imagen eliminada');
+        
+        
         //recuperamon en FROM de la sesion y redirecionamos 
         // return redirect(session('from'))->with('success', 'Producto actualizado correctamente');
+    }
+    public function agregarImagen(Request $request, $id){
+        
+        //Nos llega desde el formulario el campo imagen que es un archivo de imagen hemos de procesar el upload y moverlo a la carpeta storage/productos/$id
+        $fileName = $request->file('imagen')->getClientOriginalName();
+        //movemos el archivo recibido a la carpeta de acceso publico imagenes/productos/$id
+        $carpetaImagen=public_path("uploads/productos/$id");
+        if(!file_exists($carpetaImagen)){
+            mkdir($carpetaImagen, 0777, true);
+        }
+        $request->file('imagen')->move($carpetaImagen, $fileName);
+        $imagen = Imagen::create([
+            'id_producto' => $id,
+            'color' => $request->input('color'),
+            'imagen' => "/uploads/productos/$id/$fileName",
+        ]);
+        return redirect()->back()->with('success', 'Imagen agregada');
+
     }
 }

@@ -1,32 +1,60 @@
+.productos_destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
 
-/* Media query para resoluciones de 320 píxeles */
-@media screen and (min-width: 320px) {
-
-    .seccion1 {
-        display: block;
-    }
-
-    .home-layout-box-1 {
-        background-image: url("../img/black.JPG");
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 250px;
-    }
-
-    /*.home-layout-box-2 {
-        background-image: url("../img/hombre.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 250px;
-    }*/
-
-    .menu-imgs {
-        display: flex;
-        justify-content: center;
-        height: 250px;
-        align-items: center;
-    }
 }
+
+.productos_destacados>a {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    height: 350px;
+}
+
+.productos_destacados img {
+    width: 100%;
+
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.productos_destacados.titulo {
+    color: black;
+    margin-top: auto;
+    font-size: 20px;
+}
+
+.swiper {
+    display: none;
+}
+
+.productos_destacados>a:hover .swiper {
+    display: flex;
+
+
+}
+
+.productos_destacados>a:hover .imagen-estatica {
+    display: none;
+
+}
+
+.menu-imgs {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    align-items: center;
+}
+
 
 .menu-imgs p {
     color: #fff;
@@ -93,6 +121,7 @@
     background-size: cover;
     min-height: 250px;
 }
+
 /*CARROUSEL START*/
 .carrusel {
     position: relative;
@@ -100,7 +129,7 @@
     margin: auto;
     overflow: hidden;
     z-index: -1;
-    
+
 }
 
 .carrusel-imagenes {
@@ -109,13 +138,15 @@
 }
 
 .slide {
-    display: none; /* Oculta todas las diapositivas inicialmente */
+    display: none;
+    /* Oculta todas las diapositivas inicialmente */
     flex-direction: column;
     align-items: center;
 }
 
 .slide.actived {
-    display: flex; /* Muestra solo la diapositiva activa */
+    display: flex;
+    /* Muestra solo la diapositiva activa */
 }
 
 .carrusel-imagenes img {

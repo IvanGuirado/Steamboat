@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="/css\css_pedido\pedido.css" type="text/css">
     <link rel="stylesheet" href="/css\css_pedido\edit_pedido.css" type="text/css">
     <link rel="stylesheet" href="/css/idioma.css" type="text/css">
+    @yield('head')
     <script src="https://kit.fontawesome.com/5d8f6b66f9.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
         window.CSRF_TOKEN = '{{ csrf_token() }}';
@@ -47,6 +48,7 @@
 </head>
 
 <body>
+    <article>
     <header>
         <nav class="navegador-menu">
             <div class="ctn-nav">
@@ -72,6 +74,7 @@
                                         <a href="/productos?categoria=accesorios,hombre">{{ __('Accesorios') }}</a>
                                     </div>
                                 </li>
+                                
                                 <li class="nav-tap mujer"><span class="dropdown-selector">{{ __('Mujer') }}</span>
                                     <i class="fa fa-chevron-right dropdown-selector" id="show-woman"></i>
                                     <div class="dropdown-menu dropdown dropdown-menu-nav" id="mujerDropdown">
@@ -90,7 +93,7 @@
                                     <i class="fa fa-chevron-right dropdown-selector" id="show-ayuda"></i>
                                     <div class="dropdown-menu dropdown dropdown-menu-nav" id="ayudaDropdown">
                                         <a href="/devolucion">{{ __('Cambios y devoluciones') }}</a>
-                                        <a href="/productos?categoria=sudaderas,mujer">{{ __('Guía de tallas') }}</a>
+                                        <a href="/guiaDeTallas">{{ __('Guía de tallas') }}</a>
                                     </div>
                                 </li>
                                 @if (optional(Auth::user())->id == 1)
@@ -233,7 +236,7 @@
     <script type="text/javascript" src="/js\stock.js" defer></script>
     <script src="js/vendor/sortable.js"></script>
     <script src="js/vendor/sortable.a11y.js"></script>
-    <script type="text/javascript" src="/js\carrousel.js"></script>
+</article>
 </body>
 
 </html>

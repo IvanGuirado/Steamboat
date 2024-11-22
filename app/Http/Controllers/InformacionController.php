@@ -17,4 +17,8 @@ class InformacionController extends Controller
     {
         return view('devolucion'); // Aquí se referencia 'devoluciones'
     }
+    public function guiaDeTallas(Request $request)
+    {
+        return view('guiaDeTallas'); // Aquí se referencia 'devoluciones'
+    }
 }

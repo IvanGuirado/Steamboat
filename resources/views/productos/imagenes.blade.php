@@ -41,10 +41,10 @@
                 </tbody>
             </table>
         
-            <form action="{{ route('productos.agregarImagen', $producto->id) }}" method="POST">
+            <form action="{{ route('productos.agregarImagen', $producto->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
             <input type="text" name="color" id="color" placeholder="Color" required>
-            <input type="file" name="imagene" accept="image/*"> 
+            <input type="file" name="imagen" accept="image/*"> 
             <button type="submit" class="btn btn-primary">Añadir Imagen</button>
         </form>
     </div>

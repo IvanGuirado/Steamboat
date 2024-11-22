@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #app {
+            width: 100vw;
+            height: 100vh;
+            background: cyan;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .submenu {
+            display: none;
+        }
+
+        .submenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .submenu li {
+            display: block;
+            padding: 10px;
+        }
+
+        .submenu li:hover {
+            background: yellow;
+        }
+
+        .nav-tap:hover {
+            background: orange;
+        }
+
+        .nav-tap:hover>.submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <nav>
+            <ul>
+                <li class="nav-tap">Products
+                    <div class="submenu">
+                        <ul>
+                            <li>Product 1</li>
+                            <li>Product 2</li>
+                            <li>Product 3</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

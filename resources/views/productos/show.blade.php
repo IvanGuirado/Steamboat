@@ -1,6 +1,16 @@
 @extends('layouts.plantilla')
 
-@section('title', 'show')
+@section('head')
+    <link rel="stylesheet" href="/css/swiper.css" type="text/css">
+    <style>
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+@stop
+
+@section('title', '{{ $producto->nombre }}')
 
 @php
 
@@ -18,27 +28,31 @@
 @endphp
 
 @section('content1')
-    <script>
-        //pasamos los datos del $stock a una variable de javascript llamada stock
-        var stock = @json($stock);
-        //creamos un objeto de disponibilidad agrupado por talla
-        var disponibilidad = {};
-        for (var i = 0; i < stock.length; i++) {
-            if (!disponibilidad[stock[i].talla]) {
-                disponibilidad[stock[i].talla] = [];
-            }
-            disponibilidad[stock[i].talla].push(stock[i].color);
-        }
-        console.log(disponibilidad);
-    </script>
+
     <div class="wrapper">
         <div class="product-container">
             <!--<div class="id">
-                                                                                <h1>{{ $producto->id }}</h1>
-                                                                            </div>-->
-            <div class="img-container">
-                <img src="{{ $producto->imagen }}" alt="imagen-producto">
+                                                                                                                                <h1>{{ $producto->id }}</h1>
+                                                                                                                            </div>-->
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper" id="img-container">
+                    <!-- Slides -->
+                    <div class="swiper-slide"> <img src="{{ $producto->imagen }}" alt="imagen-producto" id="imagen"></div>
+                    ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
             </div>
+
             <div class="container-information">
                 <div class="container-info-product">
                     <div class="container-title">
@@ -165,11 +179,32 @@
     <!--script-->
     <script type="text/javascript" src="/js\producto.js"></script>
     <script>
+        //pasamos los datos del $stock a una variable de javascript llamada stock
+        var stock = @json($stock);
+        var imagenes = @json($imagenes);
+        //creamos un objeto de disponibilidad agrupado por talla
+        var disponibilidad = {};
+        for (var i = 0; i < stock.length; i++) {
+            if (!disponibilidad[stock[i].talla]) {
+                disponibilidad[stock[i].talla] = [];
+            }
+            disponibilidad[stock[i].talla].push(stock[i].color);
+        }
+        var ImagenesPorColor = {};
+        for (var i = 0; i < imagenes.length; i++) {
+            if (!ImagenesPorColor[imagenes[i].color]) {
+                ImagenesPorColor[imagenes[i].color] = [];
+            }
+            ImagenesPorColor[imagenes[i].color].push(imagenes[i].imagen);
+        }
+        console.log(disponibilidad);
+        console.log(ImagenesPorColor);
+    </script>
+    <script>
         function mapearTallas() {
 
             //Recreamos las opciones del select de tallas en funcion de los datos de disponibilidad
             var tallas = Object.keys(disponibilidad);
-
             const selectTallas = document.getElementById("size");
             selectTallas.innerHTML = tallas.map(talla => `<option value="${talla}">${talla}</option>`).join("");
             //Elegimos el primer elemento del select de tallas
@@ -189,9 +224,58 @@
         }
         mapearTallas();
         mapearColores();
+
+        function mapearImagenes() {
+
+            //Recreamos las opciones del select de colores enn funcion de los datos de disponibilidad y la talla selecionada
+            var imagenes = ImagenesPorColor[document.getElementById("colour").value];
+            if (!imagenes) {
+                imagenes = ['{{ $producto->imagen }}'];
+            }
+            const selectImagen = document.getElementById("img-container");
+            selectImagen.innerHTML = imagenes.map(src => `<div class="swiper-slide"><img src="${src}"></div>`).join("");
+            iniciarSwiper()
+        }
+
         //Cuando cambiamos la talla selecionada, actualizamos los colores disponibles
         document.getElementById("size").addEventListener("change", function() {
             mapearColores();
         });
+        document.getElementById("colour").addEventListener("change", function() {
+            mapearImagenes();
+        });
+    </script>
+
+    <script src="/js/swiper.js"></script>
+    <script>
+        let swiper = null;
+        iniciarSwiper()
+
+        function iniciarSwiper() {
+            if (swiper) {
+                swiper.destroy();
+            }
+            swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        }
     </script>
 @stop

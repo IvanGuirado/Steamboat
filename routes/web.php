@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 Route::get('home', HomeController::class, 'home');
 Route::get('/quienesSomos', [InformacionController::class,'quienesSomos'])->name('quines_somos');
+Route::get('/guiaDeTallas', [InformacionController::class,'guiaDeTallas'])->name('guia_de_tallas');
 Route::get('/devolucion', [InformacionController::class,'devoluciones'])->name('devoluciones');
 //PRODUCTO
 Route::get('/buscar', [ProductController::class,'buscar'])->name('productos.buscar');
@@ -43,7 +44,7 @@ Route::post('/productos/{id}/stock', [ProductController::class, 'updateStock'])-
 
 Route::get('/productos/{id}/imagenes', [ProductController::class, 'imagenes'])->name('productos.imagenes');
 Route::post('/productos/{id}/agregarImagen', [ProductController::class, 'agregarImagen'])->name('productos.agregarImagen');
-Route::post('/productos/{id}/eliminarImagen', [ProductController::class, 'eliminarImagen'])->name('productos.eliminarImagen');
+Route::post('/productos/{id_imagen}/eliminarImagen', [ProductController::class, 'eliminarImagen'])->name('productos.eliminarImagen');
 
 
 //USUARIO
