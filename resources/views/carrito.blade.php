@@ -1,6 +1,10 @@
+@extends('layouts.plantilla')
+@section('head')
+<link rel="stylesheet" href="/css\carrito.css" type="text/css">
+@stop
 <div class="wrapper">
     @if (!count($data))
-    <h2>{{ __('Su carrito está carrito está vacio') }}</h2>
+        <h2>{{ __('Su carrito está carrito está vacio') }}</h2>
     @else
         <form class="carrito" action="/carrito/" method="post" id="carrito-productos">
             @csrf
@@ -62,8 +66,8 @@
         </form>
     @endif
 </div>
-<div id="items-carrito" style="display:none" >
-{{count($data)}}
+<div id="items-carrito" style="display:none">
+    {{ count($data) }}
 
 </div>
 <data style="display: none">{{ json_encode($data->toArray()) }}</data>

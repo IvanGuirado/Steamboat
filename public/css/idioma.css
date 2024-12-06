@@ -48,6 +48,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    font-size: 0.75em;
   }
 
   .language-picker figure {
@@ -109,15 +110,41 @@
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
+
+  section.language {
+
+    align-items: unset;
+  }
 
   .language-picker {
     top: 20px;
     left: auto;
   }
 
+  .language-picker {
+    --width: 140px;
 
+  }
 
+  .language-picker .language-picker-btn {
+    justify-content: center;
+    width: var(--width)
+  }
+
+  .language-picker figure {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  .language-picker .left {
+    gap: unset;
+  }
+
+  section.language .option {
+    gap: unset;
+
+  }
 
 
 

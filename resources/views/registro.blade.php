@@ -1,7 +1,9 @@
 @extends('layouts.plantilla')
 
 @section('title', 'registro')
-
+@section('head')
+<link rel="stylesheet" href="/css\registro.css" type="text/css">
+@stop
 
 @section('content1')
     <div class="wrapper">

@@ -1,6 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('head')
+    <link rel="stylesheet" href="/css\producto.css" type="text/css">
     <link rel="stylesheet" href="/css/swiper.css" type="text/css">
     <style>
         .swiper {
@@ -32,14 +33,15 @@
     <div class="wrapper">
         <div class="product-container">
             <!--<div class="id">
-                                                                                                                                <h1>{{ $producto->id }}</h1>
-                                                                                                                            </div>-->
+                                                                                                                                    <h1>{{ $producto->id }}</h1>
+                                                                                                                                </div>-->
             <!-- Slider main container -->
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper" id="img-container">
                     <!-- Slides -->
-                    <div class="swiper-slide"> <img src="{{ $producto->imagen }}" alt="imagen-producto" id="imagen"></div>
+                    <div class="swiper-slide"> <img src="{{ $producto->imagen }}" alt="imagen-producto" id="imagen">
+                    </div>
                     ...
                 </div>
                 <!-- If we need pagination -->

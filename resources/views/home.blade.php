@@ -3,6 +3,7 @@
 @section('title', 'home')
 
 @section('head')
+    <link rel="stylesheet" href="/css\home.css" type="text/css">
     <link rel="stylesheet" href="/css/swiper.css" type="text/css">
     <style>
         .swiper {
@@ -34,7 +35,7 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide"> <img src="/img/hombre.jpg" alt="camiseta"></div>
-                        <div class="swiper-slide"> <img src="/img/imagen1.jpg" alt="camiseta"></div>
+                        <div class="swiper-slide"> <img src="/img/black.JPG" alt="camiseta"></div>
 
                         ...
                     </div>

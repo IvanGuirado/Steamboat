@@ -1,6 +1,9 @@
 @extends('layouts.plantilla')
 
 @section('title', 'Productos')
+@section('head')
+<link rel="stylesheet" href="/css\productos.css" type="text/css">
+@stop
 
 @section('content1')
     <div class="wrapper">

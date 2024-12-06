@@ -1,6 +1,9 @@
 @extends('layouts.plantilla')
 
 @section('title', 'update')
+@section('head')
+    <link rel="stylesheet" href="/css\edit.css" type="text/css">
+@stop
 
 @section('content1')
     <div class="wrapper">
@@ -43,7 +46,7 @@
                 </div>
             </form>
         </div>
-       
+
     </div>
 
     <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>

@@ -1,6 +1,6 @@
 .productos_destacados {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
 
 }
@@ -11,8 +11,10 @@
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 20px;
     text-align: center;
-    height: 350px;
+    height: 200px;
+    
 }
 
 .productos_destacados img {
@@ -22,7 +24,7 @@
 
 .producto-imagen {
     width: 100%;
-    height: 320px;
+    height: 200px;
     overflow: hidden;
     object-fit: cover;
 }
@@ -42,6 +44,8 @@
 
 
 }
+
+
 
 .productos_destacados>a:hover .imagen-estatica {
     display: none;
@@ -179,9 +183,211 @@
     right: 10px;
 }
 
-@media screen and (min-width: 1680px) {
-    .seccion1 {
+/* A partir de 768px, mostramos el menú de escritorio */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .productos_destacados {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
+        padding-bottom: 20px;
+
+    }
+
+    .productos_destacados>a {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        height: 350px;
+    }
+
+    .productos_destacados img {
+        width: 100%;
+
+    }
+
+    .producto-imagen {
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .productos_destacados.titulo {
+        color: black;
+        margin-top: auto;
+        font-size: 20px;
+    }
+
+    .swiper {
+        display: none;
+    }
+
+    .productos_destacados>a:hover .swiper {
+        display: flex;
+
+
+    }
+
+    .productos_destacados>a:hover .imagen-estatica {
+        display: none;
+
+    }
+
+    .menu-imgs {
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        align-items: center;
+    }
+
+
+    .menu-imgs p {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-imgs button {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fff;
+        font-size: 12px;
+        border: 2px solid #fff;
+        padding: 6px 20px;
+        box-shadow: 1px 1px rgba(155, 155, 155, 0.4);
+        transition-property: padding;
+        transition-property: linear;
+        font-weight: 600;
+
+    }
+
+    .categoria a {
+        text-decoration: none;
+
+    }
+
+    .categoria button:hover {
+        padding: 9px 31px;
+
+
+    }
+
+    .seccion2 {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .home-layout-box-3 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 250px;
+    }
+
+    .home-layout-box-4 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 250px;
+    }
+
+    .home-layout-box-5 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 250px;
+    }
+
+    .home-layout-box-6 {
+        background-image: url("../img/hombre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 250px;
+    }
+
+    /*CARROUSEL START*/
+    .carrusel {
+        position: relative;
+        /*max-width: 600px;*/
+        margin: auto;
+        overflow: hidden;
+        z-index: -1;
+
+    }
+
+    .carrusel-imagenes {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        display: none;
+        /* Oculta todas las diapositivas inicialmente */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide.actived {
+        display: flex;
+        /* Muestra solo la diapositiva activa */
+    }
+
+    .carrusel-imagenes img {
+        max-width: 100%;
         display: block;
+    }
+
+    .descripcion {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .anterior, .siguiente {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        font-size: 18px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .anterior {
+        left: 10px;
+    }
+
+    .siguiente {
+        right: 10px;
+    }
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    /* Estilos para laptops pequeñas */
+    .productos_destacados {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+
+    }
+
+}
+
+
+@media screen and (min-width: 1367px) {
+    .productos_destacados {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+
     }
 
     .home-layout-box-1 {

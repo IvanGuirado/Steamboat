@@ -1,5 +1,7 @@
 @extends('layouts.plantilla')
-
+@section('head')
+<link rel="stylesheet" href="/css\stock.css" type="text/css">
+@stop
 @section('content1')
     <div class="container">
         <h1>Stock de {{ $producto->nombre }}</h1>
