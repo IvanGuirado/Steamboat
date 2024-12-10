@@ -22,7 +22,6 @@
     {!! seo($producto ?? null) !!}
     <link rel="stylesheet" href="/css\menu.css" type="text/css">
     <link rel="stylesheet" href="/css\login.css" type="text/css">
-    <link rel="stylesheet" href="/css\login.css" type="text/css">
     <link rel="stylesheet" href="/css\pagination.css" type="text/css">
     <link rel="stylesheet" href="/css\edit.css" type="text/css">
     <link rel="stylesheet" href="/css\datos.css" type="text/css">

@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('head')
-    <link rel="stylesheet" href="/css\producto.css" type="text/css">
+    <link rel="stylesheet" href="/css\productoSingle.css" type="text/css">
     <link rel="stylesheet" href="/css/swiper.css" type="text/css">
     <style>
         .swiper {

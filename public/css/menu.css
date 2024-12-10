@@ -1051,3 +1051,11 @@ body.menu-active {
     }
 
 }
+
+.mobile-menu a:active{
+background-color: yellow;
+
+}
+.mobile-menu i:active{
+    background-color: orange;
+}

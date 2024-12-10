@@ -1,5 +1,4 @@
 /* Media query para resoluciones de 320 píxeles */
-@media screen and (max-width: 320px) {
     .productos-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -37,7 +36,6 @@
         grid-template-columns: 1fr;
         justify-items: center;
     }
-}
 
 
 
